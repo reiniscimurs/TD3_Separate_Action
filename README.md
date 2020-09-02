@@ -7,3 +7,18 @@ Dependencies:
 * [PyBullet](https://github.com/bulletphysics/bullet3)
 
 The replay buffer data structure is written by P. Emami (https://github.com/pemami4911)
+
+Results:
+
+* After 400'000'000 steps:
+<p align="center">
+    <img width=40% src="https://github.com/reiniscimurs/TD3_Separate_Action/blob/master/Gifs/Cheetah40.gif">
+</p>
+* After 500'000'000 steps:
+<p align="center">
+    <img width=40% src="https://github.com/reiniscimurs/TD3_Separate_Action/blob/master/Gifs/Cheetah50.gif">
+</p>
+* After 1'000'000'000 steps:
+<p align="center">
+    <img width=40% src="https://github.com/reiniscimurs/TD3_Separate_Action/blob/master/Gifs/Cheetah100.gif">
+</p>
