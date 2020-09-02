@@ -25,4 +25,4 @@ Results:
 
 
 
-TD3 original paper: https://arxiv.org/abs/1802.09477
+The original TD3 paper: https://arxiv.org/abs/1802.09477
