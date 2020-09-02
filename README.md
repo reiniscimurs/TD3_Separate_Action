@@ -22,3 +22,7 @@ Results:
 <p align="center">
     <img width=40% src="https://github.com/reiniscimurs/TD3_Separate_Action/blob/master/Gifs/Cheetah100.gif">
 </p>
+
+
+
+TD3 original paper: https://arxiv.org/abs/1802.09477
