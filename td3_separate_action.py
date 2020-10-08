@@ -1,16 +1,9 @@
 import os
-import time
-import random
 import numpy as np
-import matplotlib.pyplot as plt
-import pybullet_envs
 import gym
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from gym import wrappers
-from torch.autograd import Variable
-from collections import deque
 from replay_buffer import ReplayBuffer
 
 def evaluate(network, eval_episodes=10):
@@ -31,7 +24,7 @@ def evaluate(network, eval_episodes=10):
 
 class Actor(nn.Module):
 
-  def __init__(self, state_dim, action_dim, max_action):
+  def __init__(self, state_dim, max_action):
     super(Actor, self).__init__()
 
     self.layer_1 = nn.Linear(state_dim, 400)
@@ -99,8 +92,8 @@ class TD3(object):
 
   def __init__(self, state_dim, action_dim, max_action):
     # Initialize the Actor network
-    self.actor = Actor(state_dim, action_dim, max_action).to(device)
-    self.actor_target = Actor(state_dim, action_dim, max_action).to(device)
+    self.actor = Actor(state_dim, max_action).to(device)
+    self.actor_target = Actor(state_dim, max_action).to(device)
     self.actor_target.load_state_dict(self.actor.state_dict())
     self.actor_optimizer = torch.optim.Adam(self.actor.parameters())
 
