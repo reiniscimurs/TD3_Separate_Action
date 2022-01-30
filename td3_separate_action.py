@@ -181,7 +181,7 @@ seed = 0  # Random seed number
 eval_freq = 5e3  # After how many steps to perform the evaluation
 eval_ep = 10  # number of episodes for evaluation
 max_timesteps = 5e5  # Maximum number of steps to perform
-save_models = False  # Weather to save the model or not
+save_models = True  # Weather to save the model or not
 expl_noise = 1  # Initial exploration noise starting value in range [expl_min ... 1]
 expl_decay_steps = 50000  # Number of steps over which the initial exploration noise will decay over
 expl_min = 0.1  # Exploration noise after the decay in range [0...expl_noise]
@@ -283,5 +283,5 @@ while timestep < max_timesteps:
 
 # After the training is done, evaluate the network and save it
 evaluations.append(evaluate(network, eval_ep))
-if save_models: network.save("%s" % (file_name), directory="./models")
+if save_models: network.save("%s" % (file_name), directory="./pytorch_models")
 np.save("./results/%s" % (file_name), evaluations)
